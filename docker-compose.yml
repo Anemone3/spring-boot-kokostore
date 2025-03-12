@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  api-kokostore-db:
+    image: postgres:15
+    container_name: postgres-kokostore
+    restart: always
+    environment:
+      POSTGRES_DB: kokostore-db
+      POSTGRES_USER: baqua
+      POSTGRES_PASSWORD: baqua
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
