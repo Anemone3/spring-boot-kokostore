@@ -1,8 +1,8 @@
 package com.example.api_kokostore.application.service;
 
 import com.example.api_kokostore.application.dto.product.CreateProductDto;
-import com.example.api_kokostore.domain.model.CategoriesEntity;
-import com.example.api_kokostore.domain.model.ProductEntity;
+import com.example.api_kokostore.domain.entities.CategoriesEntity;
+import com.example.api_kokostore.domain.entities.ProductEntity;
 import com.example.api_kokostore.domain.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -4,7 +4,7 @@ package com.example.api_kokostore.application.controller;
 import com.example.api_kokostore.application.dto.product.CreateProductDto;
 import com.example.api_kokostore.application.dto.product.ResponseProduct;
 import com.example.api_kokostore.application.service.ProductService;
-import com.example.api_kokostore.domain.model.ProductEntity;
+import com.example.api_kokostore.domain.entities.ProductEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

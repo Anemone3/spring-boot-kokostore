@@ -1,8 +1,7 @@
 package com.example.api_kokostore.application.service;
 
-import com.example.api_kokostore.domain.model.CategoriesEntity;
+import com.example.api_kokostore.domain.entities.CategoriesEntity;
 import com.example.api_kokostore.domain.repository.CategoryRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service

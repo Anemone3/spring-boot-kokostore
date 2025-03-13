@@ -1,7 +1,7 @@
 package com.example.api_kokostore.application.dto.product;
 
-import com.example.api_kokostore.domain.model.CategoriesEntity;
-import com.example.api_kokostore.domain.model.ProductEntity;
+import com.example.api_kokostore.domain.entities.CategoriesEntity;
+import com.example.api_kokostore.domain.entities.ProductEntity;
 
 public record ResponseProduct(
         long id,

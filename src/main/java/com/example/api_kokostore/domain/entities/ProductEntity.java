@@ -1,4 +1,4 @@
-package com.example.api_kokostore.domain.model;
+package com.example.api_kokostore.domain.entities;
 
 
 import com.example.api_kokostore.shared.SlugGenerate;

@@ -1,6 +1,6 @@
 package com.example.api_kokostore.domain.repository;
 
-import com.example.api_kokostore.domain.model.CategoriesEntity;
+import com.example.api_kokostore.domain.entities.CategoriesEntity;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
