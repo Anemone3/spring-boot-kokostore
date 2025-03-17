@@ -3,6 +3,7 @@ package com.example.api_kokostore.application.service;
 
 import com.example.api_kokostore.application.dto.auth.AuthResponse;
 import com.example.api_kokostore.application.dto.auth.RegisterRequest;
+import com.example.api_kokostore.application.dto.users.CustomerResponse;
 import com.example.api_kokostore.application.dto.users.UserResponse;
 import com.example.api_kokostore.config.models.JwtPayload;
 import com.example.api_kokostore.domain.entities.UserEntity;
@@ -68,20 +69,10 @@ public class AuthService {
 
 
         cookiesUtil.setCookie(res, "accessToken", accessToken,  (int) accessTokenExpiration * 60, null);
+
         cookiesUtil.setCookie(res, "refreshToken", refreshToken, (int) refreshTokenExpiration * 60, null);
 
-        return new AuthResponse(
-                new UserResponse(
-                        user.getId().toString(),
-                        user.getUsername(),
-                        user.getEmail(),
-                        user.getRole(),
-                        user.getProfileImage(),
-                        user.getProvider()
-                ),
-                accessToken
-        );
-
+        return AuthResponse.fromUser(user,accessToken);
 
     }
 

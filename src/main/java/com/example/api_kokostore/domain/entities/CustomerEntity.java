@@ -15,19 +15,20 @@ public class CustomerEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
+
+    @Column(nullable = true, columnDefinition = "TEXT")
     private String address;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = true, length = 50)
     private String country;
 
-    @Column(nullable = false, length = 50)
+    @Column( nullable = true, length = 50)
     private String city;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = true,  length = 50)
     private String state;
 
-    @Column(nullable = false, length = 10)
+    @Column(nullable = true, length = 10)
     private String zipCode;
 
     @OneToOne(cascade = CascadeType.ALL)
