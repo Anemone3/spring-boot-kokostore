@@ -5,6 +5,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 @Entity
@@ -34,6 +35,9 @@ public class CustomerEntity {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", nullable = false, unique = true)
     private UserEntity user;
+
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
+    private List<OrderEntity> order;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

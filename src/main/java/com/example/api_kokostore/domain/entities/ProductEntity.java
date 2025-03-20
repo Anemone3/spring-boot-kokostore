@@ -4,6 +4,8 @@ package com.example.api_kokostore.domain.entities;
 import com.example.api_kokostore.shared.SlugGenerate;
 import jakarta.persistence.*;
 
+import java.util.List;
+
 
 @Entity
 @Table(name = "products")
@@ -35,6 +37,9 @@ public class ProductEntity {
     @JoinColumn(name = "category_id",nullable = false)
     private CategoriesEntity category;
 
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<DetailOrderEntity> detailOrder;
+
     @PrePersist
     @PreUpdate
     public void generateSlug(){
@@ -45,7 +50,8 @@ public class ProductEntity {
 
     public ProductEntity() {}
 
-    public ProductEntity(String sku, String slug, String name, double price, String description, String image, CategoriesEntity category) {
+    public ProductEntity(long id, String sku, String slug, String name, double price, String description, String image, CategoriesEntity category, List<DetailOrderEntity> detailOrder) {
+        this.id = id;
         this.sku = sku;
         this.slug = slug;
         this.name = name;
@@ -53,6 +59,7 @@ public class ProductEntity {
         this.description = description;
         this.image = image;
         this.category = category;
+        this.detailOrder = detailOrder;
     }
 
     public long getId() {
@@ -117,5 +124,13 @@ public class ProductEntity {
 
     public void setCategory(CategoriesEntity category) {
         this.category = category;
+    }
+
+    public List<DetailOrderEntity> getDetailOrder() {
+        return detailOrder;
+    }
+
+    public void setDetailOrder(List<DetailOrderEntity> detailOrder) {
+        this.detailOrder = detailOrder;
     }
 }

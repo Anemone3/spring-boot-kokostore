@@ -3,7 +3,7 @@ package com.example.api_kokostore.application.dto.product;
 import com.example.api_kokostore.domain.entities.CategoriesEntity;
 import com.example.api_kokostore.domain.entities.ProductEntity;
 
-public record ResponseProduct(
+public record ProductResponse(
         long id,
         String name,
         double price,
@@ -11,8 +11,8 @@ public record ResponseProduct(
         String image,
         CategoriesEntity category
 ) {
-    public static ResponseProduct from(ProductEntity product) {
-        return new ResponseProduct(
+    public static ProductResponse from(ProductEntity product) {
+        return new ProductResponse(
                 product.getId(),
                 product.getName(),
                 product.getPrice(),
