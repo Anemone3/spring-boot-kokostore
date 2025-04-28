@@ -15,16 +15,16 @@ public class PaymentEntity {
     @Column(nullable = false)
     private PaymentEnum method;
 
-    @OneToOne(mappedBy = "payment", cascade = CascadeType.ALL)
-    private OrderEntity order;
+    public PaymentEntity() {
+    }
 
-
-    public PaymentEntity() {}
-
-    public PaymentEntity(int id, PaymentEnum method, OrderEntity order) {
+    public PaymentEntity(int id, PaymentEnum method) {
         this.id = id;
         this.method = method;
-        this.order = order;
+    }
+
+    public PaymentEntity(PaymentEnum method) {
+        this.method = method;
     }
 
     public int getId() {
@@ -43,11 +43,4 @@ public class PaymentEntity {
         this.method = method;
     }
 
-    public OrderEntity getOrder() {
-        return order;
-    }
-
-    public void setOrder(OrderEntity order) {
-        this.order = order;
-    }
 }

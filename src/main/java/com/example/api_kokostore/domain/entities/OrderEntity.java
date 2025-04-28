@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import java.security.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
@@ -22,8 +21,8 @@ public class OrderEntity {
     @JoinColumn(name = "customer_id")
     private CustomerEntity customer;
 
-    @OneToOne
-    @JoinColumn(name = "payment_id", unique = true)
+    @ManyToOne
+    @JoinColumn(name = "payment_id", nullable = false)
     private PaymentEntity payment;
 
     @Column(nullable = false)
@@ -44,10 +43,12 @@ public class OrderEntity {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
+    public OrderEntity() {
+    }
 
-    public OrderEntity() {}
-
-    public OrderEntity(UUID id, CustomerEntity customer, PaymentEntity payment, double total, int quantity, StatusOrder status, List<DetailOrderEntity> detailOrders, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public OrderEntity(UUID id, CustomerEntity customer, PaymentEntity payment, double total, int quantity,
+            StatusOrder status, List<DetailOrderEntity> detailOrders, LocalDateTime createdAt,
+            LocalDateTime updatedAt) {
         this.id = id;
         this.customer = customer;
         this.payment = payment;

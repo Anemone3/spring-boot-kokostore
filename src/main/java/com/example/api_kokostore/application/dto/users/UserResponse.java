@@ -5,7 +5,7 @@ import com.example.api_kokostore.domain.enums.AuthProviderEnum;
 import com.example.api_kokostore.domain.enums.Roles;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
+
 
 public record UserResponse(
         String id,

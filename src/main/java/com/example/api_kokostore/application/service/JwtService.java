@@ -1,6 +1,6 @@
 package com.example.api_kokostore.application.service;
 
-import com.auth0.jwt.HeaderParams;
+
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
@@ -11,8 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
-import java.util.Map;
-import java.util.Objects;
+
 
 @Service
 public class JwtService {

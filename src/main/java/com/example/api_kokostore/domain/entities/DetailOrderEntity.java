@@ -32,10 +32,11 @@ public class DetailOrderEntity {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
+    public DetailOrderEntity() {
+    }
 
-    public DetailOrderEntity() {}
-
-    public DetailOrderEntity(Long id, OrderEntity order, ProductEntity product, String description, int quantity, double price, double subtotal, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public DetailOrderEntity(Long id, OrderEntity order, ProductEntity product, String description, int quantity,
+            double price, double subtotal, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.order = order;
         this.product = product;

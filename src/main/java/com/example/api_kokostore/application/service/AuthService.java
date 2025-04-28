@@ -3,8 +3,7 @@ package com.example.api_kokostore.application.service;
 
 import com.example.api_kokostore.application.dto.auth.AuthResponse;
 import com.example.api_kokostore.application.dto.auth.RegisterRequest;
-import com.example.api_kokostore.application.dto.users.CustomerResponse;
-import com.example.api_kokostore.application.dto.users.UserResponse;
+
 import com.example.api_kokostore.config.models.JwtPayload;
 import com.example.api_kokostore.domain.entities.UserEntity;
 import com.example.api_kokostore.domain.enums.Roles;
@@ -19,9 +18,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @Service
 public class AuthService {

@@ -1,7 +1,6 @@
 package com.example.api_kokostore.config;
 
 
-import com.example.api_kokostore.domain.entities.UserEntity;
 import com.example.api_kokostore.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

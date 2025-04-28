@@ -4,7 +4,6 @@ package com.example.api_kokostore.application.service;
 import com.example.api_kokostore.application.dto.users.CustomerRequest;
 import com.example.api_kokostore.application.dto.users.UserResponse;
 import com.example.api_kokostore.domain.entities.CustomerEntity;
-import com.example.api_kokostore.domain.entities.UserEntity;
 import com.example.api_kokostore.domain.repository.CustomerRepository;
 import com.example.api_kokostore.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

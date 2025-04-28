@@ -1,11 +1,11 @@
 package com.example.api_kokostore.domain.entities;
 
-
 import com.example.api_kokostore.shared.SlugGenerate;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 
 import java.util.List;
-
 
 @Entity
 @Table(name = "products")
@@ -14,11 +14,10 @@ public class ProductEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-
-    @Column(unique = true,nullable = false)
+    @Column(unique = true, nullable = false)
     private String sku;
 
-    @Column(unique = true,nullable = false)
+    @Column(unique = true, nullable = false)
     private String slug;
 
     @Column(nullable = false)
@@ -34,23 +33,26 @@ public class ProductEntity {
     private String image;
 
     @ManyToOne
-    @JoinColumn(name = "category_id",nullable = false)
+    @JoinColumn(name = "category_id", nullable = false)
     private CategoriesEntity category;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<DetailOrderEntity> detailOrder;
 
     @PrePersist
     @PreUpdate
-    public void generateSlug(){
-        if(this.slug == null || this.slug.isEmpty()){
+    public void generateSlug() {
+        if (this.slug == null || this.slug.isEmpty()) {
             this.slug = SlugGenerate.toSlug(this.name);
         }
     }
 
-    public ProductEntity() {}
+    public ProductEntity() {
+    }
 
-    public ProductEntity(long id, String sku, String slug, String name, double price, String description, String image, CategoriesEntity category, List<DetailOrderEntity> detailOrder) {
+    public ProductEntity(long id, String sku, String slug, String name, double price, String description, String image,
+            CategoriesEntity category, List<DetailOrderEntity> detailOrder) {
         this.id = id;
         this.sku = sku;
         this.slug = slug;
